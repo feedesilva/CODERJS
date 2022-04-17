@@ -8,7 +8,7 @@ class Tienda{
 
     addProducto(producto)
     { 
-      console.log("antes de push",producto);
+      console.log("antes de push",tienda);
     this.productos.push(producto)  
     console.log(this.productos);
     }

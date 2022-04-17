@@ -14,18 +14,20 @@ form.addEventListener("submit", (event)=>{
         hello.setAttribute ("class", "title");
         form.appendChild(hello);  
     }
+    document.querySelector("#send").setAttribute("id", "disabled"); //Deshabilito el botón//
 })
 }
+saludo();
+show_cat();
+
 const data = JSON.parse(localStorage.getItem("Shop"));
-let tienda = new Tienda ([])
-if(!tienda)
-{
-  tienda= new Tienda([]);
-}
-else{
+const tienda = new Tienda ([]);
+if(tienda){
   tienda= new Tienda(data);
 }
-
+else{
+  tienda = new Tienda([])
+}
 
 //mostrar botones de categorías//
 function show_cat (){
@@ -85,6 +87,7 @@ function actual_shop(){
     myShopp.setAttribute("id", "shopp");
       container.appendChild(myShopp);
   }
+ 
 }
  
 
@@ -134,10 +137,17 @@ function refreshShopp(){
   })
   container.appendChild(newContainer);
   tienda.save();
+  let final_price = document.createElement("h3");
+  final_price.innerHTML = `Precio final: ${preciofinal} <br>`;
+  newContainer.appendChild(final_price)
+  let buy_btn = document.createElement("button");
+  buy_btn.innerText = "Finalizar compra"
+  buy_btn.setAttribute("class", "comprar btn-primary btn");
+  buy_btn.style = ("margin-top:20px")
+  newContainer.appendChild(buy_btn);
 }
 
 function product_filter(idgroup){
   return  stockProductos.filter(stockProductos=>stockProductos.categoria_producto===idgroup);
 }
 
-show_cat();
