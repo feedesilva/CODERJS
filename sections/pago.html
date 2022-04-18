@@ -43,12 +43,12 @@
                 <img id="chip" src="../assets/chip.jpg" alt="">
                 <div id="card_numer">
                     <p class="label">Número de tarjeta</p>
-                    <p id="number">#### #### #### ####</p>
+                    <p  class="number">#### #### #### ####</p>
                 </div>
                 <div id="grupo_datos">
                     <div id="card_name">
                         <p class="label">Nombre del titular</p>
-                        <p id="name">Federico Silva</p>
+                        <p id="name">XXXXXXX XXXXX</p>
                     </div>
                     <div id="expiracion">
                         <p class="label">Fecha de expiracion</p>
@@ -80,19 +80,28 @@
                 <label for="inputNombre">Nombre</label>
                 <input type="text" id="inputNombre" autocomplete="off">
             </div>
-            <div>
-                <div id="fecha">
-                    <label for=""></label>
-                    <div id="select_month">
-                        <label for="inputMonth">MES</label>
-                        <input type="month" id="inputMonth">
-                    </div>
-                    <div id="select_year">
-                        <label for="inputYear">AÑO</label>
-                        <input type="year" id="inputYear">
+            <div class="flexbox">
+                <div class="grupo_expira">
+                    <label for="selectMes">expiracion</label>
+                    <div class="flexbox">
+                        <div class="group_select">
+                            <select name="mes" id="selectMes">
+                                <option disabled selected>Mes</option>
+                            </select>
+                        </div>
+                        <div class="group_select">
+                            <select name="year" id="selectYear">
+                                <option disabled selected>Año</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="cvv">
+                    <label for="inputCvv">CVV</label>
+                    <input type="text" id="inputCvv" maxlength="3">
+                </div>       
+        </div>
+        <button id="btn_enviar" type="submit">Enviar</button>
         </form>
 
     </div>

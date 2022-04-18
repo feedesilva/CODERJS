@@ -416,8 +416,6 @@ fieldset {
           transform: rotateY(0deg);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   cursor: pointer;
   z-index: 2;
 }
@@ -587,6 +585,82 @@ fieldset {
 #abrir_form.active {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+#form_card {
+  background-color: white;
+  width: 100%;
+  max-width: 700px;
+  padding: 150px 30px 30px 30px;
+  border-radius: 20px;
+  position: relative;
+  top: -150px;
+  z-index: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#form_card.active {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#form_card label {
+  display: block;
+  margin-bottom: 5px;
+  color: #7d8994;
+  font-size: 1rem;
+}
+
+#form_card input, select, .btn_enviar {
+  border: 2px solid aquamarine;
+  font-size: 18px;
+  height: 50px;
+  width: 100%;
+  padding: 5px 12px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  border-radius: 5px;
+}
+
+#form_card input {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cvv {
+  min-width: 100px;
+}
+
+.grupo_expira {
+  width: 100%;
+}
+
+.group_select {
+  width: 100%;
+  margin-right: 20px;
+}
+
+#btn_enviar {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  background-color: lightblue;
+}
+
+#btn_enviar:hover {
+  background-color: blue;
 }
 
 .footer {

@@ -1,117 +1,128 @@
+//ROTACION TARJETA//
 const card = document.querySelector("#card");
 const btn = document.querySelector("#abrir_form");
+
 card.addEventListener('click', ()=>{
     card.classList.toggle('active');
     console.log(card.classList.contains("active"));
 });
+//ABRIR FORM//
+const pay_form = document.querySelector("#form_card");
 btn.addEventListener("click", () =>{
     btn.classList.toggle("active");
+    pay_form.classList.toggle("active");
 })
 
-/*
+//Vuelvo la tarjeta al frente//
+function mostrarFrente(){
+    if(card.classList.contains('active'))   
+    
+        card.classList.remove("active")
+    
+}
+//Creo opciones de mes//
+let selectMonth= document.querySelector("#selectMes");
+let mes = 0;
+for(let i = 1; i<= 12; i++){
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerText=i;
+    mes = i;
+    selectMonth.appendChild(option);
+}
+let month = document.querySelector("#month");
+month.addEventListener('change', () => {
+    month.textContent = mes;
+})
+
+
+//Creo opciones de Año//
+let selectYear = document.querySelector("#selectYear");
+const actualYear = new Date().getFullYear();
+for(let i = actualYear; i<= actualYear+10; i++){
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerText=i;
+    selectYear.appendChild(option);
+}
+
+//Input numero tarjeta//
+let div_img = document.querySelector("#logo_marca");
+let inputNum = document.querySelector("#inputNumero")
+inputNum.addEventListener("keypress", (e)=>{
+    e.preventDefault();
+    let codigoinput = e.keyCode;
+    console.log(codigoinput);
+    let valorinput = String.fromCharCode(codigoinput);
+    console.log(valorinput);
+    valorParsed = parseInt(valorinput);
+    if(valorParsed || codigoinput === 48){
+        if(inputNum.value.length < 19){
+            let i = inputNum.value.length+1;
+            if(i%5!==0){
+                console.log(i);
+                inputNum.value += valorParsed;
+            }
+            else{
+                inputNum.value += ' ' + valorParsed;
+            }
+        }
+    }
+})
+
+
+
+
+//Input Nombre//
+let inputName = document.querySelector("#inputNombre")
+inputName.addEventListener("keypress", (e)=>{
+    e.preventDefault();
+    let codigoinput = e.keyCode;
+    console.log(codigoinput);
+    let valorinput = String.fromCharCode(codigoinput);
+    console.log(valorinput);
+    valorParsed = parseInt(valorinput);
+    if(!valorParsed){
+    inputName.value += valorinput;
+        }
+})
+
+//Input numero cvv//
+let inputCvv = document.querySelector("#inputCvv")
+inputCvv.addEventListener("keypress", (e)=>{
+    e.preventDefault();
+    let codigoinput = e.keyCode;
+    console.log(codigoinput);
+    let valorinput = String.fromCharCode(codigoinput);
+    console.log(valorinput);
+    valorParsed = parseInt(valorinput);
+    if(valorParsed){
+        if(inputCvv.value.length <3){ //LIMITO A 3 DIGITOS
+    inputCvv.value += valorParsed;
+        }
+    }
+})
+
+//Pulso enviar//
+let container_all = document.querySelector("#contenedor")
+let send = document.querySelector("#btn_enviar");
+send.addEventListener("click", () => {
+    container_all.innerHTML = `<h3> PRONTO TENDRA NOVEDADES </h3>`
+})
+    
+
+
 function volver(){
 let container = document.querySelector("#back");
 let back = document.createElement("button");
+back.setAttribute("class", "comprar btn-primary btn agregar ")
 back.innerText = "Volver"
     back.addEventListener("click", ()=>{
         location = "./carrito.html";
     })
 container.appendChild(back)
 }
-*/
 
-/*//Declaro variables
-let banco;
-let cantidad_cuotas;
-let subtotal;
-let despacho = ' ';
-let precioFinal = 0;
-let precio_resta = 0;
-let precioBuscado = 0;
-
-//Elijo con que tarjeta pago
-function tarjeta (){
-    banco = prompt("Elegir tarjeta (Visa, Master)").toLowerCase();
-    console.log ("Tarjeta elegida " + banco);
-    if (banco === "Visa" || banco==="Master"){
-       return banco;
-    }
-}
-//Selecciono cantidad de cuotas y visualizo intereses
-function cuotas (medio){
-    if (medio == "visa"){
-        alert("1 Cuota sin interés, 3 con 10%, 6 con 20%");
-        while (isNaN(cantidad_cuotas)){
-            cantidad_cuotas = parseInt(prompt("Elija cantidad de cuotas"));
-            if(!isNaN(cantidad_cuotas)){
-                if (cantidad_cuotas === 1){
-                    subtotal = precioFinal;
-                    alert("El precio final es $" + subtotal);
-                    console.log("1 cuota");
-                }
-                if (cantidad_cuotas === 3){
-                    subtotal = precioFinal*1.1;
-                    alert("El precio final es $" + subtotal);
-                    console.log("3 cuotas");
-                }
-                if (cantidad_cuotas === 6){
-                    subtotal = precioFinal*1.2;
-                    alert("El precio final es $" + subtotal);
-                    console.log("6 cuotas");
-                }
-            }
-            
-        }
-    }
-    else if (medio == "master"){
-        alert ("Hasta 3 cuotas sin interés. 6 con 15% y 12 con 30%");
-        while (isNaN(cantidad_cuotas)){
-            cantidad_cuotas = parseInt(prompt("Elija cantidad de cuotas"));
-            if(!isNaN(cantidad_cuotas)){
-                if (cantidad_cuotas <= 3){
-                    subtotal = precioFinal;
-                    alert("El precio final es $" + subtotal);
-                    console.log("1 a 3 cuotas");
-                }
-                if (cantidad_cuotas === 6){
-                    subtotal = precio*1.15;
-                    alert("El precio final es $" + subtotal);
-                    console.log("6 cuotas");
-                }
-                if (cantidad_cuotas === 12){
-                    subtotal = precioFinal * 1.3;
-                    alert("El precio final es $" + subtotal);
-                    console.log("12 cuotas");
-                }
-            }
-            
-        }
-    }
-    return subtotal;
-}
-//selección de entrega
-function envio (entrega){
-    alert ("Seleccione tipo de entrega");
-    alert ("El costo de envío es $300");
-    despacho = prompt("Envío a domicilio (ingrese 'envio') o Retiro en tienda (ingrese 'retiro')");
-    console.log ("seleccionó " + despacho);
-    if (despacho === "envio"){
-        entrega+=300;
-        alert("El costo total es: $"+entrega);
-    }
-    if(despacho==="retiro"){
-        alert("El costo total es: $"+entrega);
-    }
-}
-
-
-menu();
-console.log ("precio Final "+precioFinal);
-tarjeta();
-cuotas(banco);
-envio(subtotal);
-*/
-
-
+volver();
 
 

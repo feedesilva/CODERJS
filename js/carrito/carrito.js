@@ -20,7 +20,7 @@ saludo();
 show_cat();
 
 const data = JSON.parse(localStorage.getItem("Shop"));
-const tienda = new Tienda ([]);
+let tienda = new Tienda ([]);
 if(tienda){
   tienda= new Tienda(data);
 }
