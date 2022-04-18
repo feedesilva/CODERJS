@@ -4,7 +4,7 @@ btn = document.createElement("button");
 btn.innerText = "Comprar ahora";
 btn.setAttribute ("class", "comprar btn-primary btn");
 btn.addEventListener("click", ()=> {
-    location = "./carrito.html";
+    location = "./sections/carrito.html";
 
 }
 )

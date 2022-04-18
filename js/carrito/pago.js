@@ -1,4 +1,22 @@
-//Declaro variables
+const card = document.querySelector("#card");
+card.addEventListener('click', ()=>{
+    card.classList.toggle('active');
+});
+
+
+/*
+function volver(){
+let container = document.querySelector("#back");
+let back = document.createElement("button");
+back.innerText = "Volver"
+    back.addEventListener("click", ()=>{
+        location = "./carrito.html";
+    })
+container.appendChild(back)
+}
+*/
+
+/*//Declaro variables
 let banco;
 let cantidad_cuotas;
 let subtotal;
@@ -88,7 +106,7 @@ console.log ("precio Final "+precioFinal);
 tarjeta();
 cuotas(banco);
 envio(subtotal);
-
+*/
 
 
 

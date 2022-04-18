@@ -1,7 +1,6 @@
 let preciofinal = 0 ;
 //Saludo al usuario
 function saludo(){
-let ask_name = document.querySelector("#knoww_user");
 const form = document.querySelector("#user_form");    
 form.addEventListener("submit", (event)=>{
     event.preventDefault();
@@ -21,12 +20,12 @@ saludo();
 show_cat();
 
 const data = JSON.parse(localStorage.getItem("Shop"));
-const tienda = new Tienda ([]);
+let tienda = new Tienda ([]);
 if(tienda){
   tienda= new Tienda(data);
 }
 else{
-  tienda = new Tienda([])
+  tienda = new Tienda([]);
 }
 
 //mostrar botones de categorías//
@@ -137,14 +136,32 @@ function refreshShopp(){
   })
   container.appendChild(newContainer);
   tienda.save();
+  let btn_div = document.createElement("div");
+  btn_div.style = "display:flex; flex-flow: row wrap";
   let final_price = document.createElement("h3");
   final_price.innerHTML = `Precio final: ${preciofinal} <br>`;
-  newContainer.appendChild(final_price)
+  newContainer.appendChild(final_price);
   let buy_btn = document.createElement("button");
-  buy_btn.innerText = "Finalizar compra"
+  buy_btn.innerText = "Finalizar compra";
   buy_btn.setAttribute("class", "comprar btn-primary btn");
-  buy_btn.style = ("margin-top:20px")
-  newContainer.appendChild(buy_btn);
+  buy_btn.style = ("margin:20px");
+  buy_btn.addEventListener("click", ()=>{
+    location = "pago.html";
+  })
+  let reset_btn = document.createElement("button");
+  reset_btn.innerText = "reset carrito";
+  reset_btn.setAttribute("class", "comprar btn-primary btn");
+  reset_btn.style = ("margin-top:20px");
+  reset_btn.addEventListener("click", ()=>{
+    container.innerHTML="";
+    tienda= new Tienda([])
+    
+  })
+  newContainer.appendChild(btn_div);
+  btn_div.appendChild(buy_btn);
+  btn_div.appendChild(reset_btn);
+
+  
 }
 
 function product_filter(idgroup){
