@@ -1,8 +1,12 @@
 const card = document.querySelector("#card");
+const btn = document.querySelector("#abrir_form");
 card.addEventListener('click', ()=>{
     card.classList.toggle('active');
+    console.log(card.classList.contains("active"));
 });
-
+btn.addEventListener("click", () =>{
+    btn.classList.toggle("active");
+})
 
 /*
 function volver(){

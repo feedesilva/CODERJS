@@ -34,6 +34,7 @@
     <h1>PAGO</h1>
     <div id="back"></div>
     <div id="contenedor">
+        <!--Seccion tarjeta-->
         <section id="card">
             <div id="front">
                 <div id="logo_marca">
@@ -65,6 +66,35 @@
                 </div>
             </div>
         </section>
+        <!--BOTON-->
+        <div id="container_btn">
+            <button id="abrir_form"><i class="fas fa-plus"></i></button>
+        </div>
+        <!--Form-->
+        <form action="" id="form_card">
+            <div>
+                <label for="inputNumero">Número tarjeta</label>
+                <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+            </div>
+            <div>
+                <label for="inputNombre">Nombre</label>
+                <input type="text" id="inputNombre" autocomplete="off">
+            </div>
+            <div>
+                <div id="fecha">
+                    <label for=""></label>
+                    <div id="select_month">
+                        <label for="inputMonth">MES</label>
+                        <input type="month" id="inputMonth">
+                    </div>
+                    <div id="select_year">
+                        <label for="inputYear">AÑO</label>
+                        <input type="year" id="inputYear">
+                    </div>
+                </div>
+            </div>
+        </form>
+
     </div>
 </main>
 </body>
@@ -76,6 +106,8 @@
         <img class="redes__sociales" src="../assets/instagram_a.png" alt="Instagram"><a href=""></a>
       </div>
   </footer>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
 </html>
 
 

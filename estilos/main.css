@@ -410,8 +410,8 @@ fieldset {
   max-width: 550px;
   position: relative;
   color: white;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
   -webkit-transform-style: preserve-3d;
@@ -560,6 +560,33 @@ fieldset {
   background-color: white;
   width: 80px;
   height: 30px;
+}
+
+#abrir_form {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 20px;
+  color: white;
+  position: relative;
+  top: -25px;
+  z-index: 3;
+  border-radius: 100%;
+  background-color: blue;
+  padding: 5px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+#abrir_form:hover {
+  background-color: #0505ad;
+}
+
+#abrir_form.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .footer {
