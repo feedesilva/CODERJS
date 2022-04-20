@@ -130,9 +130,9 @@ function refreshShopp(){
   let newContainer = document.createElement("div");
   newContainer.setAttribute("style", "display:flex; flex-flow: column wrap");
   prods.forEach(product => {
-    const {nombre, precio} = product//
+    const {nombre, precio} = product// Desestructuracion
     let nodoLi = document.createElement("div");
-    nodoLi.innerHTML = `${nombre} - ${} desestructuro <br>` ;
+    nodoLi.innerHTML = `${nombre} - ${precio}  <br>` ;
   
     newContainer.appendChild(nodoLi);
   })
