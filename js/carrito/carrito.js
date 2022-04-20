@@ -8,9 +8,7 @@ const data = JSON.parse(localStorage.getItem("Shop"));
 if(data){
   tienda = new Tienda(data);
 }
-else{
-   tienda = new Tienda ([]);
-}
+
 
 //Saludo al usuario
 function saludo(){
