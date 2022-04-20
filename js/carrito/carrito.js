@@ -9,7 +9,6 @@ if(data){
   tienda = new Tienda(data);
 }
 
-
 //Saludo al usuario
 function saludo(){
 const form = document.querySelector("#user_form");    
@@ -60,6 +59,13 @@ function show_element(group){
   
   //Agrego los productos al espacio creado//
   let nodoProductos = document.getElementById("productos");
+  nodoProductos===null ? crearProductos() : nodoProductos.innerHTML=""
+  function crearProductos(){
+    nodoProductos = document.createElement("div");
+    nodoProductos.setAttribute("id", "productos");
+    contenedor.appendChild(nodoProductos);
+  }
+  /*
   if(nodoProductos===null)
   {
     nodoProductos = document.createElement("div");
@@ -70,6 +76,7 @@ function show_element(group){
   {
     nodoProductos.innerHTML="";
   }
+  */
  //a cada producto de la categoria elegida le asigno su informacion//
  let cadena ='';
  choose.forEach((element)=>{
