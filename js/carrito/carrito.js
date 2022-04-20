@@ -132,7 +132,7 @@ function refreshShopp(){
   prods.forEach(product => {
     const {nombre, precio} = product//
     let nodoLi = document.createElement("div");
-    nodoLi.innerHTML = `${nombre} - ${precio} desestructuro <br>` ;
+    nodoLi.innerHTML = `${nombre} - ${} desestructuro <br>` ;
   
     newContainer.appendChild(nodoLi);
   })
