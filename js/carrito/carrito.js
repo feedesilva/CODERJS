@@ -4,10 +4,11 @@ saludo();
 show_cat();
 
 let tienda = new Tienda ([]);
-const data = JSON.parse(localStorage.getItem("Shop"));
-if(data){
+const data = JSON.parse(localStorage.getItem("Shop")) || []
+/*if(data){
   tienda = new Tienda(data);
 }
+*/
 
 //Saludo al usuario
 function saludo(){
@@ -50,13 +51,12 @@ function show_element(group){
   let posicion = document.querySelector("#big_space");
   //creo el espacio para los productos a comprar//
   let contenedor = document.getElementById("mainContainer");
-  contenedor===null && createContainer()
+  contenedor===null && createContainer(); //Operador AND
   function createContainer()
   {
     contenedor = document.createElement("div");
     contenedor.setAttribute("id", "mainContainer");
     posicion.appendChild(contenedor);
-    console.log("Create container");
   }
   
   //Agrego los productos al espacio creado//
