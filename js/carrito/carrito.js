@@ -50,21 +50,23 @@ function show_element(group){
   let posicion = document.querySelector("#big_space");
   //creo el espacio para los productos a comprar//
   let contenedor = document.getElementById("mainContainer");
-  if(contenedor===null)
+  contenedor===null && createContainer()
+  function createContainer()
   {
     contenedor = document.createElement("div");
     contenedor.setAttribute("id", "mainContainer");
     posicion.appendChild(contenedor);
+    console.log("Create container");
   }
   
   //Agrego los productos al espacio creado//
   let nodoProductos = document.getElementById("productos");
-  nodoProductos===null ? crearProductos() : nodoProductos.innerHTML=""
+
+  nodoProductos===null ? crearProductos() : nodoProductos.innerHTML="" //Aplico operador ternario
   function crearProductos(){
     nodoProductos = document.createElement("div");
     nodoProductos.setAttribute("id", "productos");
     contenedor.appendChild(nodoProductos);
-    console.log("OP TERNARIO");
   }
   /*
   if(nodoProductos===null)
