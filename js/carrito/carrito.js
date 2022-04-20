@@ -64,6 +64,7 @@ function show_element(group){
     nodoProductos = document.createElement("div");
     nodoProductos.setAttribute("id", "productos");
     contenedor.appendChild(nodoProductos);
+    console.log("OP TERNARIO");
   }
   /*
   if(nodoProductos===null)
