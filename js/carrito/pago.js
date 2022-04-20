@@ -81,12 +81,11 @@ inputName.addEventListener("keypress", (e)=>{
     console.log(codigoinput);
     let valorinput = String.fromCharCode(codigoinput);
     console.log(valorinput);
-    valorParsed = parseInt(valorinput);
-    valorParsed || (inputName.value += valorinput);
-  /*  if(!valorParsed){
-    inputName.value += valorinput;
-        }
-        */
+    let cero;
+    codigoinput === 48 && console.log("es cero") ;
+    valorParsed = parseInt(valorinput);  //Discrimino solo numeros
+    valorParsed || (inputName.value += valorinput); //OP OR, si no es un número lo tomo//
+
 })
 
 //Input numero cvv//
