@@ -554,10 +554,16 @@ fieldset {
   margin-bottom: 5px;
 }
 
-#cvv {
+.cvv_div {
   background-color: white;
   width: 80px;
   height: 30px;
+}
+
+#cvv {
+  text-align: center;
+  color: black;
+  margin-top: 3px;
 }
 
 #abrir_form {
