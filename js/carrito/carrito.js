@@ -4,7 +4,7 @@ saludo();
 show_cat();
 
 let tienda = new Tienda ([]);
-const data = JSON.parse(localStorage.getItem("Shop")) || []
+const data = JSON.parse(localStorage.getItem("Shop")) ||  new Tienda([])
 /*if(data){
   tienda = new Tienda(data);
 }
