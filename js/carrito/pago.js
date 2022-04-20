@@ -82,7 +82,7 @@ inputName.addEventListener("keypress", (e)=>{
     let valorinput = String.fromCharCode(codigoinput);
     console.log(valorinput);
     valorParsed = parseInt(valorinput);  //Discrimino solo numeros
-    (valorParsed && codigoinput !== 48) || (inputName.value += valorinput); //OP OR, si no es un número lo tomo//
+    valorParsed  || (inputName.value += valorinput); //OP OR, si no es un número lo tomo//
 
 })
 
