@@ -27,6 +27,7 @@ form.addEventListener("submit", (event)=>{
         form.appendChild(hello);  
     }
     document.querySelector("#send").setAttribute("id", "disabled"); //Deshabilito el botón//
+    console.log("est");
 })
 }
 
