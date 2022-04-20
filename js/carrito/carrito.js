@@ -1,4 +1,17 @@
 let preciofinal = 0 ;
+
+saludo();
+show_cat();
+
+let tienda = new Tienda ([]);
+const data = JSON.parse(localStorage.getItem("Shop"));
+if(data){
+  tienda = new Tienda(data);
+}
+else{
+   tienda = new Tienda ([]);
+}
+
 //Saludo al usuario
 function saludo(){
 const form = document.querySelector("#user_form");    
@@ -15,17 +28,6 @@ form.addEventListener("submit", (event)=>{
     }
     document.querySelector("#send").setAttribute("id", "disabled"); //Deshabilito el botón//
 })
-}
-saludo();
-show_cat();
-
-const data = JSON.parse(localStorage.getItem("Shop"));
-let tienda = new Tienda ([]);
-if(tienda){
-  tienda= new Tienda(data);
-}
-else{
-  tienda = new Tienda([]);
 }
 
 //mostrar botones de categorías//
@@ -135,7 +137,9 @@ function refreshShopp(){
     newContainer.appendChild(nodoLi);
   })
   container.appendChild(newContainer);
+
   tienda.save();
+
   let btn_div = document.createElement("div");
   btn_div.style = "display:flex; flex-flow: row wrap";
   let final_price = document.createElement("h3");
