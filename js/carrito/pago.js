@@ -82,9 +82,11 @@ inputName.addEventListener("keypress", (e)=>{
     let valorinput = String.fromCharCode(codigoinput);
     console.log(valorinput);
     valorParsed = parseInt(valorinput);
-    if(!valorParsed){
+    valorParsed || (inputName.value += valorinput);
+  /*  if(!valorParsed){
     inputName.value += valorinput;
         }
+        */
 })
 
 //Input numero cvv//

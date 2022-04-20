@@ -4,11 +4,10 @@ saludo();
 show_cat();
 
 let tienda = new Tienda ([]);
-const data = JSON.parse(localStorage.getItem("Shop")) ||  new Tienda([])
-/*if(data){
+const data = JSON.parse(localStorage.getItem("Shop"));
+if(data){
   tienda = new Tienda(data);
 }
-*/
 
 //Saludo al usuario
 function saludo(){
@@ -68,18 +67,8 @@ function show_element(group){
     nodoProductos.setAttribute("id", "productos");
     contenedor.appendChild(nodoProductos);
   }
-  /*
-  if(nodoProductos===null)
-  {
-    nodoProductos = document.createElement("div");
-    nodoProductos.setAttribute("id", "productos");
-    contenedor.appendChild(nodoProductos);
-  }
-  else 
-  {
-    nodoProductos.innerHTML="";
-  }
-  */
+  
+  
  //a cada producto de la categoria elegida le asigno su informacion//
  let cadena ='';
  choose.forEach((element)=>{
