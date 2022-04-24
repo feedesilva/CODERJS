@@ -1,9 +1,12 @@
 let form = document.querySelector("#my_form");
+//Incorporo SweetAlert para informar que el mensaje fue enviado//
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
-    let notification = document.createElement("h1");
-    notification.innerText = "ENVIADO";
-    notification.setAttribute("class", "title")
-    form.innerHTML = "";
-    form.appendChild(notification);
+    Swal.fire({
+        title: "Mensaje Enviado!",
+        text: "Recibirá una respuesta en los próximos días",
+        icon: "success",
+        confirmButtonText: "Genial",
+    })
+   
 })

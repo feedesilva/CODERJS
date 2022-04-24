@@ -1,31 +1,13 @@
 let preciofinal = 0 ;
 
-saludo();
+
 show_cat();
 
+//Verifico local storage y edito Tienda//
 let tienda = new Tienda ([]);
 const data = JSON.parse(localStorage.getItem("Shop"));
 if(data){
   tienda = new Tienda(data);
-}
-
-//Saludo al usuario
-function saludo(){
-const form = document.querySelector("#user_form");    
-form.addEventListener("submit", (event)=>{
-    event.preventDefault();
-    let name_U = document.querySelector("#nombre");
-    const surname_U = document.querySelector("#apellido");
-    document.querySelector("#send").value="Enviado";
-    if (name_U.value.trim()!=="" && surname_U.value.trim()!==""){
-        const hello = document.createElement("h1");
-        hello.innerHTML =`<h1>Hola ${name_U.value} ${surname_U.value}! Bienvenido al carrito de compras.</h1>`;
-        hello.setAttribute ("class", "title");
-        form.appendChild(hello);  
-    }
-    document.querySelector("#send").setAttribute("id", "disabled"); //Deshabilito el botón//
-    console.log("est");
-})
 }
 
 //mostrar botones de categorías//
@@ -119,6 +101,18 @@ function addtoShopp(idProduct){
   let products = stockProductos.map(el=>el.id);
   let index = products.findIndex(el=>el===idProduct);
   let product = stockProductos[index];
+  //TOASTIFY//  
+  Toastify({
+    text: "Producto Agregado 🛒",
+    position: "right",
+    gravity: "bottom",  
+    duration: 2000,
+    style: {
+      background: "black",  
+      borderRadius: "10px",
+    }
+  }).showToast();
+  console.log("Producto agregado ");
   tienda.addProducto(product);
   refreshShopp();
 }
@@ -152,13 +146,22 @@ function refreshShopp(){
   buy_btn.addEventListener("click", ()=>{
     location = "pago.html";
   })
+
+  //RESETEO EL CARRITO//
   let reset_btn = document.createElement("button");
   reset_btn.innerText = "reset carrito";
   reset_btn.setAttribute("class", "comprar btn-primary btn");
   reset_btn.style = ("margin-top:20px");
   reset_btn.addEventListener("click", ()=>{
     container.innerHTML="";
-    tienda= new Tienda([])
+    tienda= new Tienda([]);
+    Toastify({
+      text:"Carrito Eliminado ❌",
+      duration: 3000,
+      style:{
+        background: "black",
+        color: "white",}
+    }).showToast();
     
   })
   newContainer.appendChild(btn_div);
