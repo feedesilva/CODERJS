@@ -1,2 +1,2 @@
 //let stockProductos =
-console.log(fetch("stock.json"));
+console.log("FEtch", fetch("stock.json"));
