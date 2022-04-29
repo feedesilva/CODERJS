@@ -1,2 +1,4 @@
 //let stockProductos =
-console.log("Fetch", fetch('../../stock.json'))
+fetch('../../stock.json')
+    .then(res => res.json())
+    .then(respuesta => console.log(respuesta))
