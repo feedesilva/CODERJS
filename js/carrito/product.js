@@ -1,5 +1,5 @@
-//Defino un stock que funcionará como buscador
 //let stockProductos =
-fetch("stock.json")
+console.log(fetch("stock.json"));/*
 .then((result) => result.json())
-.then((json) => console.log(json).results);
+.then((json) => console.log(json));
+*/
