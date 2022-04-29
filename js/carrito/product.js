@@ -1,5 +1,5 @@
 //let stockProductos =
-console.log(fetch("stock.json"));/*
-.then((result) => result.json())
+fetch("stock.json")
+.then((result) => console.log(result.json()));/*
 .then((json) => console.log(json));
 */
