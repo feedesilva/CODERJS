@@ -164,7 +164,8 @@ let eleccion;
         })
     }
     console.log(cuotas_precio);
-    subtotal.innerHTML = "El precio final es: $" + cuotas_precio;
+    subtotal.innerText = "El precio final es: $" + cuotas_precio;
+    console.log(subtotal);
     div_precio.appendChild(subtotal);
 /*
     else{
