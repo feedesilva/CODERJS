@@ -110,7 +110,18 @@ let subtotal;
         let cant_cuotas = 0;
         for(let i = 1; i<=6; i++){
             let option = document.createElement("option");
+            console.log(i);
             if(i===1){
+                option.value = i;
+                option.innerText=i;
+                cant_cuotas = i;
+                console.log(i);
+            } 
+            if(i===3){
+                option.value = i;
+                option.innerText=i;
+                cant_cuotas = i;
+            } if(i===6){
                 option.value = i;
                 option.innerText=i;
                 cant_cuotas = i;
