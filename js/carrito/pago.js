@@ -162,7 +162,7 @@ let eleccion;
                 console.log(cuotas_precio);
             }
             console.log(cuotas_precio);
-            parseInt(cuotas_precio);
+            Math.trunc(cuotas_precio)
             console.log(cuotas_precio);
             subtotal.innerHTML = '';
             subtotal.innerHTML = "El precio final es: $" + cuotas_precio;
