@@ -161,22 +161,24 @@ let cuotas = document.querySelector("#inputCuotas");
                     option.innerText=`${i} 20% interés`;
                 }
                 cuotas.appendChild(option);
-
-                    if(option.value.selected === 1){
+                cuotas.addEventListener("change", ()=>{
+                    if(cuotas.value === 1){
                         cuotas_precio = cuotas_precio * 1;
                         console.log("Enrto en 1");
 
                     }
-                    if(option.value.selected === 3){
+                    if(cuotas.value === 3){
                         cuotas_precio = cuotas_precio * 1.1;
                         console.log("Enrto en 3");
 
                     }
-                    if(option.value.selected === 6){
+                    if(cuotas.value === 6){
                         cuotas_precio = cuotas_precio * 1.2;
                         console.log("Enrto en 6");
 
                     }
+                })
+                    
             
             }
         }
