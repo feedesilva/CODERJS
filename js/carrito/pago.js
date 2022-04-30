@@ -112,7 +112,7 @@ let subtotal;
             let option = document.createElement("option");
             if(i===1){
                 option.value = i;
-                option.innerText=i, "Sin interés";
+                option.innerText=i;
                 cant_cuotas = i;
             } 
             cuotas.appendChild(cant_cuotas);
