@@ -144,36 +144,40 @@ selectMonth.addEventListener("change", () =>{
 
 let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
 let cuotas = document.querySelector("#inputCuotas");
+let eleccion;
     if(banco === visa){
         for(let i = 1; i<=6; i++){
             if(i===1 || i%3 === 0){
                 let option = document.createElement("option");
                 if(i===1){
+                    eleccion = 1
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
                 }
                 if(i===3){
+                    eleccion = 3
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
                 }
                 if(i===6){
+                    eleccion = 6
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
                 }
                 cuotas.appendChild(option);
             }
               //  cuotas.addEventListener("change", ()=>{
-                    if(cuotas.value === 1){
+                    if(eleccion === 1){
                         cuotas_precio = cuotas_precio * 1;
                         console.log("Enrto en 1");
 
                     }
-                    if(cuotas.value === 3){
+                    if(eleccion === 3){
                         cuotas_precio = cuotas_precio * 1.1;
                         console.log("Enrto en 3");
 
                     }
-                    if(cuotas.value === 6){
+                    if(eleccion === 6){
                         cuotas_precio = cuotas_precio * 1.2;
                         console.log("Enrto en 6");
 
