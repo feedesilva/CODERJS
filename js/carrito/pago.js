@@ -149,7 +149,7 @@ let precio_Con_Cuota;
                     div_precio.appendChild(subtotal);
                     
                 } 
-                cuotas.appendChild(option);
+                cuotas.appendChild(opcion);
                 
     }
     
