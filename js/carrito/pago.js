@@ -151,7 +151,7 @@ const precio_card = JSON.parse(localStorage.getItem("Precio"));
 console.log(precio_card);
 let div_precio = document.querySelector("#precio");
 let preciofinallog = document.createElement("h3");
-preciofinallog.innerHTML = precio_card;
+preciofinallog.innerHTML = "El precio final es: $",precio_card;
 console.log(preciofinallog);
 div_precio.appendChild(preciofinallog);
 
