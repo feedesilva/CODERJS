@@ -97,7 +97,6 @@ inputNum.addEventListener("keypress", (e)=>{
     card_number.innerText = inputNum.value;
 
 //Defino que imagen se muestra en la tarjeta//
-let interes = 0;
 let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
@@ -125,23 +124,20 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
                     option.innerText=`${i} 20% interés`;
                 }
         
-                cuotas.addEventListener("change", ()=>{
+               // cuotas.addEventListener("change", ()=>{
                     if(option.value === 1){
                         cuotas_precio = cuotas_precio * 1;
-                        console.log(interes);
-                    cant_cuotas = i;
+                        cant_cuotas = i;
                     }
                     if(option.value === 3){
                         cuotas_precio = cuotas_precio * 1.1;
-                        console.log(interes);
                         cant_cuotas = i;
                     }
                     if(option.value === 6){
                         cuotas_precio = cuotas_precio * 1.2;
-                        console.log(interes);
-                    cant_cuotas = i;
+                        cant_cuotas = i;
                     }
-                })
+                //})
                 console.log(cuotas_precio);
                 subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
                 div_precio.appendChild(subtotal);
