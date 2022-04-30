@@ -110,25 +110,24 @@ let precio_Con_Cuota;
         for(let i = 1; i<=6; i++){
             if(i===1 || i%3 === 0){
                 let option = document.createElement("option");
-                console.log(i);
                 if(i===1){
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
-                    precio_Con_Cuota = subtotal;
+                    precio_Con_Cuota = precio_card;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                 } 
                 if(i===3){
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
-                    precio_Con_Cuota = subtotal*1.1;
+                    precio_Con_Cuota = precio_card*1.1;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                 } 
                 if(i===6){
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
-                    precio_Con_Cuota = subtotal*1.2;
+                    precio_Con_Cuota = precio_card*1.2;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                 } 
