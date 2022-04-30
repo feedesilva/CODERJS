@@ -99,6 +99,7 @@ inputNum.addEventListener("keypress", (e)=>{
 //Defino que imagen se muestra en la tarjeta//
 let interes = 0;
 let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
+console.log(cuotas_precio);
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
         const card_img = document.createElement("img");
