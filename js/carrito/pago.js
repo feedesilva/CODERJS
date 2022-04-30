@@ -150,6 +150,8 @@ send.addEventListener("click", () => {
 let div_precio = document.querySelector("#precio");
 let label = document.createElement("label");
 label.innerHTML = preciofinal;
+div_precio.appendChild(label);
+
 //Funcion de boton de volver al carrito//
 function volver(){
 let container = document.querySelector("#back");
