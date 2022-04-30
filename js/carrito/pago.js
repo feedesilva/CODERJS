@@ -29,7 +29,7 @@ function mostrarBack(){
 }
 
 //Muestro precio final//
-const precio_card = JSON.parse(localStorage.getItem("Precio"));
+let precio_card = JSON.parse(localStorage.getItem("Precio"));
 console.log(precio_card);
 let div_precio = document.querySelector("#precio");
 let subtotal = document.createElement("h3");
