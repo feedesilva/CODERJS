@@ -109,9 +109,9 @@ let subtotal;
         let cuotas = document.querySelector("#inputCuotas");
         let cant_cuotas = 0;
         for(let i = 1; i<=6; i++){
-            let option = document.createElement("option");
             console.log(i);
             if(i===1){
+                let option = document.createElement("option");
                 option.value = i;
                 option.innerText=i;
                 cant_cuotas = i;
@@ -119,12 +119,14 @@ let subtotal;
                 cuotas.appendChild(cant_cuotas);
             } 
             if(i===3){
+                let option = document.createElement("option");
                 option.value = i;
                 option.innerText=i;
                 cant_cuotas = i;
                 cuotas.appendChild(cant_cuotas);
             }
             if(i===6){
+                let option = document.createElement("option");
                 option.value = i;
                 option.innerText=i;
                 cant_cuotas = i;
