@@ -97,7 +97,7 @@ inputNum.addEventListener("keypress", (e)=>{
     card_number.innerText = inputNum.value;
 
 //Defino que imagen se muestra en la tarjeta//
-let precio_Con_Cuota;
+let precio_Con_Cuota = JSON.parse(localStorage.getItem("Precio"));
 let interes = 0;
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
