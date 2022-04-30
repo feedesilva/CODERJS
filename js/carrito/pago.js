@@ -146,6 +146,10 @@ send.addEventListener("click", () => {
     container_all.innerHTML = `<h3> PRONTO TENDRA NOVEDADES </h3>`
 })
 
+//Muestro precio final//
+let div_precio = document.querySelector("#precio");
+let label = document.createElement("label");
+label.innerHTML = preciofinal;
 //Funcion de boton de volver al carrito//
 function volver(){
 let container = document.querySelector("#back");
