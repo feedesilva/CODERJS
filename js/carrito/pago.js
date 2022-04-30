@@ -143,11 +143,12 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
 
                     }
                 })
+                cuotas.appendChild(option);
             }
         }
         console.log(cuotas_precio);
         subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
-        cuotas.appendChild(option);
+        
     }
   
 
