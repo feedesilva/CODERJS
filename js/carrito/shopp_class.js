@@ -1,4 +1,4 @@
-
+let precio_card = 0;
 class Tienda{
     constructor(productos){
         this.productos=productos;
@@ -15,6 +15,7 @@ class Tienda{
     save(){
       localStorage.setItem("Shop",JSON.stringify (this.productos)); //aplico json para ingresar al objeto//
       preciofinal = tienda.productos.reduce((acc,element)=>acc+=element.precio,0); //Calculo el precio final y lo imprimo en consola//
+      precio_card = preciofinal
       console.log(preciofinal);
 
     }

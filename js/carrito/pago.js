@@ -149,7 +149,7 @@ send.addEventListener("click", () => {
 //Muestro precio final//
 let div_precio = document.querySelector("#precio");
 let preciofinallog = document.createElement("h3");
-preciofinallog.innerHTML = preciofinal;
+preciofinallog.innerHTML = precio_card;
 console.log(preciofinallog);
 console.log(preciofinal);
 div_precio.appendChild(preciofinallog);
