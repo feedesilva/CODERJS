@@ -688,6 +688,11 @@ fieldset {
   padding: 5px;
 }
 
+#div_cuotas {
+  margin-bottom: 5px;
+  width: 15%;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
