@@ -32,11 +32,10 @@ function mostrarBack(){
 const precio_card = JSON.parse(localStorage.getItem("Precio"));
 console.log(precio_card);
 let div_precio = document.querySelector("#precio");
-let preciofinallog = document.createElement("h3");
-preciofinallog.setAttribute("class", "precioFinal")
-preciofinallog.innerHTML = "El precio final es: $" + precio_card;
-console.log(preciofinallog);
-div_precio.appendChild(preciofinallog);
+let subtotal = document.createElement("h3");
+subtotal.setAttribute("class", "precioFinal")
+subtotal.innerHTML = "El precio final es: $" + precio_card;
+div_precio.appendChild(subtotal);
 
 
 //Creo opciones de mes//
@@ -98,7 +97,7 @@ inputNum.addEventListener("keypress", (e)=>{
     card_number.innerText = inputNum.value;
 
 //Defino que imagen se muestra en la tarjeta//
-let subtotal;
+let precio_Con_Cuota;
 
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
@@ -114,18 +113,23 @@ let subtotal;
                 console.log(i);
                 if(i===1){
                     option.value = i;
-                    option.innerText=i;
+                    option.innerText=`${i} Sin interes`;
+                    precio_Con_Cuota = subtotal;
+                    console.log(precio_Con_Cuota);
                     cant_cuotas = i;
-                    console.log(i);
                 } 
                 if(i===3){
                     option.value = i;
-                    option.innerText=i;
+                    option.innerText=`${i} 10% interés`;
+                    precio_Con_Cuota = subtotal*1.1;
+                    console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                 } 
                 if(i===6){
                     option.value = i;
-                    option.innerText=i;
+                    option.innerText=`${i} 20% interés`;
+                    precio_Con_Cuota = subtotal*1.2;
+                    console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                 } 
                 cuotas.appendChild(option);
