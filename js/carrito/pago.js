@@ -150,22 +150,23 @@ let eleccion;
             if(i===1 || i%3 === 0){
                 let option = document.createElement("option");
                 if(i===1){
-                    eleccion = 1
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
                 }
                 if(i===3){
-                    eleccion = 3
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
                 }
                 if(i===6){
-                    eleccion = 6
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
                 }
                 cuotas.appendChild(option);
             }
+            cuotas.addEventListener("change", ()=>{
+                console.log(option.value);
+            })
+            /*
               //  cuotas.addEventListener("change", ()=>{
                     if(eleccion === 1){
                         cuotas_precio = cuotas_precio * 1;
@@ -238,6 +239,7 @@ let eleccion;
                  
                 }
             }
+            */
             console.log(cuotas_precio);
             subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
         }
