@@ -101,25 +101,8 @@ inputNum.addEventListener("keypress", (e)=>{
     card_number.innerText = inputNum.value;
 
 //Defino que imagen se muestra en la tarjeta//
-/*
-//Creo opciones de mes//
-let selectMonth= document.querySelector("#selectMes");
-let mes = 0;
-let card_month = document.querySelector("#month");
 
-for(let i = 1; i<= 12; i++){
-    let option = document.createElement("option");
-    option.value = i;
-    option.innerText=i;
-    mes = i;
-    selectMonth.appendChild(option);
-}
-selectMonth.addEventListener("change", () =>{
-    mostrarFrente();
-    selectMonth.value <= 9 ? card_month.innerText = "0 "+selectMonth.value :  card_month.innerText = selectMonth.value;
-})
 
-*/
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
         const card_img = document.createElement("img");
@@ -181,7 +164,7 @@ let eleccion;
         })
     }
     console.log(cuotas_precio);
-    subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
+    subtotal.innerHTML = "El precio final es: $" + cuotas_precio;
     div_precio.appendChild(subtotal);
 /*
     else{
