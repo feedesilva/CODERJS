@@ -29,7 +29,7 @@ function mostrarBack(){
 }
 
 //Muestro precio final//
-let precio_card = JSON.parse(localStorage.getItem("Precio"));
+const precio_card = JSON.parse(localStorage.getItem("Precio"));
 console.log(precio_card);
 let div_precio = document.querySelector("#precio");
 let subtotal = document.createElement("h3");
@@ -98,6 +98,7 @@ inputNum.addEventListener("keypress", (e)=>{
 
 //Defino que imagen se muestra en la tarjeta//
 let interes = 0;
+let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
         const card_img = document.createElement("img");
@@ -139,8 +140,9 @@ let interes = 0;
                     cant_cuotas = i;
                     }
                 })
-                precio_card = precio_card * interes;
-                subtotal.innerHTML = `El precio final es: $ ${precio_card}`;
+                cuotas_precio = cuotas_precio * interes;
+                console.log(cuotas_precio);
+                subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
                 div_precio.appendChild(subtotal);
                 cuotas.appendChild(option);
                 
