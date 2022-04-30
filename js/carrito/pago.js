@@ -132,6 +132,8 @@ let precio_Con_Cuota;
                     cant_cuotas = i;
                 } 
                 cuotas.appendChild(option);
+                subtotal.innerHTML = "El precio final es: $" + precio_Con_Cuota;
+                div_precio.appendChild(subtotal);
             }
         }
     }
