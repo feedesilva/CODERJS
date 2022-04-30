@@ -151,20 +151,20 @@ let eleccion;
                 let option = document.createElement("option");
                 if(i===1){
                     option.value = i;
-                    option.innerText=`${i} Sin interes`;
+                    option.innerText = i;
                 }
                 if(i===3){
                     option.value = i;
-                    option.innerText=`${i} 10% interés`;
+                    option.innerText=i;
                 }
                 if(i===6){
                     option.value = i;
-                    option.innerText=`${i} 20% interés`;
+                    option.innerText=i;
                 }
                 cuotas.appendChild(option);
             }
             cuotas.addEventListener("change", ()=>{
-                console.log(option.value);
+                console.log(cuotas.value);
             })
             /*
               //  cuotas.addEventListener("change", ()=>{
