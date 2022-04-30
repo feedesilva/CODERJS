@@ -28,6 +28,17 @@ function mostrarBack(){
     }
 }
 
+//Muestro precio final//
+const precio_card = JSON.parse(localStorage.getItem("Precio"));
+console.log(precio_card);
+let div_precio = document.querySelector("#precio");
+let preciofinallog = document.createElement("h3");
+preciofinallog.setAttribute("class", "precioFinal")
+preciofinallog.innerHTML = "El precio final es: $" + precio_card;
+console.log(preciofinallog);
+div_precio.appendChild(preciofinallog);
+
+
 //Creo opciones de mes//
 let selectMonth= document.querySelector("#selectMes");
 let mes = 0;
@@ -87,13 +98,27 @@ inputNum.addEventListener("keypress", (e)=>{
     card_number.innerText = inputNum.value;
 
 //Defino que imagen se muestra en la tarjeta//
+let subtotal;
+
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
         const card_img = document.createElement("img");
         console.log("visa");
         card_img.src = "../assets/visa.png";
         div_img.appendChild(card_img);
-    }
+        let cuotas = document.querySelector("#inputCuotas");
+        let cant_cuotas = 0;
+        for(let i = 1; i<=6; i++){
+            let option = document.createElement("option");
+            if(i===1){
+                option.value = i;
+                option.innerText=i, "Sin interés";
+                cant_cuotas = i;
+            } 
+            cuotas.appendChild(cant_cuotas);
+            }
+        }
+    
     else{
     if(inputNum.value[0] == 3){
         div_img.innerHTML = ''; 
@@ -146,15 +171,6 @@ send.addEventListener("click", () => {
     container_all.innerHTML = `<h3> PRONTO TENDRA NOVEDADES </h3>`
 })
 
-//Muestro precio final//
-const precio_card = JSON.parse(localStorage.getItem("Precio"));
-console.log(precio_card);
-let div_precio = document.querySelector("#precio");
-let preciofinallog = document.createElement("h3");
-preciofinallog.setAttribute("class", "precioFinal")
-preciofinallog.innerHTML = "El precio final es: $" + precio_card;
-console.log(preciofinallog);
-div_precio.appendChild(preciofinallog);
 
 //Funcion de boton de volver al carrito//
 function volver(){

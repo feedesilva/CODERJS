@@ -7,14 +7,6 @@ let precioFinal = 0;
 let precio_resta = 0;
 let precioBuscado = 0;
 
-//Elijo con que tarjeta pago
-function tarjeta (){
-    banco = prompt("Elegir tarjeta (Visa, Master)").toLowerCase();
-    console.log ("Tarjeta elegida " + banco);
-    if (banco === "Visa" || banco==="Master"){
-       return banco;
-    }
-}
 //Selecciono cantidad de cuotas y visualizo intereses
 function cuotas (medio){
     if (medio == "visa"){
