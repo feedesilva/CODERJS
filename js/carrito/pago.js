@@ -75,6 +75,8 @@ let div_img = document.querySelector("#logo_marca");
 let card_number = document.querySelector("#number");
 let inputNum = document.querySelector("#inputNumero");
 let banco; 
+let visa;
+let master; 
 
 inputNum.addEventListener("keypress", (e)=>{
     mostrarFrente();
