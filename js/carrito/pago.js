@@ -127,20 +127,24 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
                // cuotas.addEventListener("change", ()=>{
                     if(option.value === 1){
                         cuotas_precio = cuotas_precio * 1;
+                        console.log("Enrto en 1");
                         cant_cuotas = i;
                     }
                     if(option.value === 3){
                         cuotas_precio = cuotas_precio * 1.1;
                         cant_cuotas = i;
+                        console.log("Enrto en 3");
+
                     }
                     if(option.value === 6){
                         cuotas_precio = cuotas_precio * 1.2;
                         cant_cuotas = i;
+                        console.log("Enrto en 6");
+
                     }
                 //})
                 console.log(cuotas_precio);
                 subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
-                div_precio.appendChild(subtotal);
                 cuotas.appendChild(option);
                 
             }
