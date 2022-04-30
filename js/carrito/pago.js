@@ -161,6 +161,7 @@ let cuotas = document.querySelector("#inputCuotas");
                     option.innerText=`${i} 20% interés`;
                 }
                 cuotas.appendChild(option);
+            }
                 cuotas.addEventListener("change", ()=>{
                     if(cuotas.value === 1){
                         cuotas_precio = cuotas_precio * 1;
@@ -182,7 +183,7 @@ let cuotas = document.querySelector("#inputCuotas");
             
             }
         }
-    }
+
     else{
         if(banco === master){
             for(let i = 1; i<=9; i++){
