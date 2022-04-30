@@ -107,9 +107,10 @@ let precio_Con_Cuota;
         div_img.appendChild(card_img);
         let cuotas = document.querySelector("#inputCuotas");
         let cant_cuotas = 0;
+        let option;
         for(let i = 1; i<=6; i++){
             if(i===1 || i%3===0){
-                let option = document.createElement("option");
+                option = document.createElement("option");
                 option.value = i;
             }
         }
