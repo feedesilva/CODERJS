@@ -113,7 +113,8 @@ let precio_Con_Cuota;
                 if(i===1){
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
-                    if(option.value.selected===i){
+                    if(option===i){
+                        console.log(option);
                     precio_Con_Cuota = precio_card;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
@@ -124,7 +125,9 @@ let precio_Con_Cuota;
                 if(i===3){
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
-                    if(option.value.selected===i){
+                    if(option===i){
+                        console.log(option);
+
                     precio_Con_Cuota = precio_card*1.1;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
@@ -135,7 +138,9 @@ let precio_Con_Cuota;
                 if(i===6){
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
-                    if(option.value.selected===i){
+                    if(option===i){
+                        console.log(option);
+
                     precio_Con_Cuota = precio_card*1.2;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
