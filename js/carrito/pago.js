@@ -114,11 +114,11 @@ let interes = 0;
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
                 }
-                if(option===3){
+                if(i===3){
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
                 }
-                if(option===6){
+                if(i===6){
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
                 }
@@ -126,17 +126,17 @@ let interes = 0;
                 cuotas.addEventListener("change", ()=>{
                     if(option.value === 1){
                         interes = 1;
-                    console.log(precio_Con_Cuota);
+                    console.log(interes);
                     cant_cuotas = i;
                     }
                     if(option.value === 3){
                         interes = 1.1;
-                        console.log(precio_Con_Cuota);
+                        console.log(interes);
                         cant_cuotas = i;
                     }
                     if(option.value === 6){
                         interes = 1.2;
-                        console.log(precio_Con_Cuota);
+                        console.log(interes);
                     cant_cuotas = i;
                     }
                 })
