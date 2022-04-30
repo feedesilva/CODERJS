@@ -164,11 +164,10 @@ let eleccion;
         })
     }
     console.log(cuotas_precio);
-    let subtotal_cuota = document.createElement("h3");
-    subtotal_cuota.setAttribute("class", "precioFinal")
-    subtotal_cuota.innerText = "El precio final es: $" + cuotas_precio;
-    console.log(subtotal_cuota);
-    div_precio.appendChild(subtotal_cuota);
+    subtotal.innerHTML = '';
+    subtotal.innerHTML = "El precio final es: $" + cuotas_precio;
+    console.log(subtotal);
+    div_precio.appendChild(subtotal);
 /*
     else{
         if(banco === master){
