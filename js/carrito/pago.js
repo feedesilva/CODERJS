@@ -97,7 +97,6 @@ inputNum.addEventListener("keypress", (e)=>{
     card_number.innerText = inputNum.value;
 
 //Defino que imagen se muestra en la tarjeta//
-let precio_Con_Cuota = JSON.parse(localStorage.getItem("Precio"));
 let interes = 0;
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
@@ -140,8 +139,8 @@ let interes = 0;
                     cant_cuotas = i;
                     }
                 })
-                precio_Con_Cuota = precio_Con_Cuota * interes;
-                subtotal.innerHTML = `El precio final es: $ ${precio_Con_Cuota}`;
+                precio_card = precio_card * interes;
+                subtotal.innerHTML = `El precio final es: $ ${precio_card}`;
                 div_precio.appendChild(subtotal);
                 cuotas.appendChild(option);
                 
