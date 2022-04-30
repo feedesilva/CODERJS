@@ -116,17 +116,21 @@ let subtotal;
                 option.innerText=i;
                 cant_cuotas = i;
                 console.log(i);
+                cuotas.appendChild(cant_cuotas);
             } 
             if(i===3){
                 option.value = i;
                 option.innerText=i;
                 cant_cuotas = i;
-            } if(i===6){
+                cuotas.appendChild(cant_cuotas);
+            }
+            if(i===6){
                 option.value = i;
                 option.innerText=i;
                 cant_cuotas = i;
+                cuotas.appendChild(cant_cuotas);
             } 
-            cuotas.appendChild(cant_cuotas);
+            
             }
         }
     
