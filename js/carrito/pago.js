@@ -123,7 +123,7 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
         console.log("visa");
         card_img.src = "../assets/visa.png";
         div_img.appendChild(card_img);
-
+/*
         let cuotas = document.querySelector("#inputCuotas");
         let cant_cuotas = 0;
 
@@ -167,7 +167,7 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
         }
         console.log(cuotas_precio);
         subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
-        
+        */
     }
   
 
