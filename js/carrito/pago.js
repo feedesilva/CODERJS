@@ -73,7 +73,9 @@ selectYear.addEventListener("change", ()=>{
 //Input numero tarjeta//
 let div_img = document.querySelector("#logo_marca");
 let card_number = document.querySelector("#number");
-let inputNum = document.querySelector("#inputNumero")
+let inputNum = document.querySelector("#inputNumero");
+let banco; 
+
 inputNum.addEventListener("keypress", (e)=>{
     mostrarFrente();
     e.preventDefault();
@@ -116,8 +118,6 @@ selectMonth.addEventListener("change", () =>{
 })
 
 */
-let banco; 
-
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
         const card_img = document.createElement("img");
