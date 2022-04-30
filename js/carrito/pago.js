@@ -110,67 +110,39 @@ let precio_Con_Cuota;
         for(let i = 1; i<=6; i++){
             if(i===1 || i%3 === 0){
                 let option = document.createElement("option");
-                switch (option.selected) {
-                    case 1:
-                        option.value = i;
-                    option.innerText=`${i} Sin interes`;
-                    precio_Con_Cuota = precio_card;
-                    console.log(precio_Con_Cuota);
-                    cant_cuotas = i;
-                    subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
-                    div_precio.appendChild(subtotal);
-                        break;
-                    case 3:
-                        option.value = i;
-                    option.innerText=`${i} 10% interés`;
-                    precio_Con_Cuota = precio_card*1.1;
-                    console.log(precio_Con_Cuota);
-                    cant_cuotas = i;
-                    subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
-                    div_precio.appendChild(subtotal);
-
-                    case 6:
-                        option.value = i;
-                        option.innerText=`${i} 20% interés`;
-                        precio_Con_Cuota = precio_card*1.2;
-                        console.log(precio_Con_Cuota);
-                        cant_cuotas = i;
-                        subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
-                        div_precio.appendChild(subtotal);
-                    
-                    default:
-                        break;
-                }
-                /*
                 if(i===1){
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
+                    if(option.selected===i){
                     precio_Con_Cuota = precio_card;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                     subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
                     div_precio.appendChild(subtotal);
+                    }
                 } 
                 if(i===3){
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
+                    if(option.selected===i){
                     precio_Con_Cuota = precio_card*1.1;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                     subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
                     div_precio.appendChild(subtotal);
+                    }
                 } 
                 if(i===6){
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
+                    if(option.selected===i){
                     precio_Con_Cuota = precio_card*1.2;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
                     subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
                     div_precio.appendChild(subtotal);
+                    }
                 } 
-                */
-                console.log(option.selected);
                 cuotas.appendChild(option);
                 
             }
