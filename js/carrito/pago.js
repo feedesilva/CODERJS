@@ -109,7 +109,7 @@ let subtotal;
         let cuotas = document.querySelector("#inputCuotas");
         let cant_cuotas = 0;
         for(let i = 1; i<=6; i++){
-            if(i%1===0 && i%3 === 0){
+            if(i===1 || i%3 === 0){
                 let option = document.createElement("option");
                 console.log(i);
                 if(i===1){
