@@ -116,8 +116,8 @@ let precio_Con_Cuota;
                     precio_Con_Cuota = precio_card;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
-                    subtotal.innerHTML = "El precio final es: $" + precio_Con_Cuota;
-                div_precio.appendChild(subtotal);
+                    subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
+                    div_precio.appendChild(subtotal);
                 } 
                 if(i===3){
                     option.value = i;
@@ -125,8 +125,8 @@ let precio_Con_Cuota;
                     precio_Con_Cuota = precio_card*1.1;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
-                    subtotal.innerHTML = "El precio final es: $" + precio_Con_Cuota;
-                div_precio.appendChild(subtotal);
+                    subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
+                    div_precio.appendChild(subtotal);
                 } 
                 if(i===6){
                     option.value = i;
@@ -134,8 +134,8 @@ let precio_Con_Cuota;
                     precio_Con_Cuota = precio_card*1.2;
                     console.log(precio_Con_Cuota);
                     cant_cuotas = i;
-                    subtotal.innerHTML = "El precio final es: $" + precio_Con_Cuota;
-                div_precio.appendChild(subtotal);
+                    subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
+                    div_precio.appendChild(subtotal);
                 } 
                 cuotas.appendChild(option);
                 
