@@ -162,7 +162,7 @@ let cuotas = document.querySelector("#inputCuotas");
                 }
                 cuotas.appendChild(option);
             }
-                cuotas.addEventListener("change", ()=>{
+              //  cuotas.addEventListener("change", ()=>{
                     if(cuotas.value === 1){
                         cuotas_precio = cuotas_precio * 1;
                         console.log("Enrto en 1");
@@ -178,7 +178,7 @@ let cuotas = document.querySelector("#inputCuotas");
                         console.log("Enrto en 6");
 
                     }
-                })
+                //})
                     
             
             }
