@@ -148,11 +148,11 @@ send.addEventListener("click", () => {
 
 //Muestro precio final//
 let div_precio = document.querySelector("#precio");
-let label = document.createElement("label");
-label.innerText = preciofinal;
-console.log(label);
+let preciofinallog = document.createElement("h3");
+preciofinallog.innerHTML = preciofinal;
+console.log(preciofinallog);
 console.log(preciofinal);
-div_precio.appendChild(label);
+div_precio.appendChild(preciofinallog);
 
 //Funcion de boton de volver al carrito//
 function volver(){
