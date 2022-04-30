@@ -161,13 +161,14 @@ let eleccion;
                 cuotas_precio = cuotas_precio*1.2;
                 console.log(cuotas_precio);
             }
+            console.log(cuotas_precio);
+            subtotal.innerHTML = '';
+            subtotal.innerHTML = "El precio final es: $" + cuotas_precio;
+            console.log(subtotal);
+            div_precio.appendChild(subtotal);
         })
     }
-    console.log(cuotas_precio);
-    subtotal.innerHTML = '';
-    subtotal.innerHTML = "El precio final es: $" + cuotas_precio;
-    console.log(subtotal);
-    div_precio.appendChild(subtotal);
+   
 /*
     else{
         if(banco === master){
