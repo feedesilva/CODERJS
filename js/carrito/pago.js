@@ -163,23 +163,26 @@ let eleccion;
                 }
                 cuotas.appendChild(option);
             }
-            cuotas.addEventListener("change", ()=>{
-                console.log(cuotas.value);
-                if(cuotas.value === '1'){
-                    cuotas_precio = cuotas_precio*1;
-                    console.log(cuotas_precio);
-                }
-                if(cuotas.value === '3'){
-                    cuotas_precio = cuotas_precio*1.1;
-                    console.log(cuotas_precio);
-                }
-                if(cuotas.value === '6'){
-                    cuotas_precio = cuotas_precio*1.2;
-                    console.log(cuotas_precio);
-                }
-            })
         }
+        cuotas.addEventListener("change", ()=>{
+            console.log(cuotas.value);
+            if(cuotas.value === '1'){
+                cuotas_precio = cuotas_precio*1;
+                console.log(cuotas_precio);
+            }
+            if(cuotas.value === '3'){
+                cuotas_precio = cuotas_precio*1.1;
+                console.log(cuotas_precio);
+            }
+            if(cuotas.value === '6'){
+                cuotas_precio = cuotas_precio*1.2;
+                console.log(cuotas_precio);
+            }
+        })
     }
+    console.log(cuotas_precio);
+    subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
+    div_precio.appendChild(subtotal);
 /*
     else{
         if(banco === master){
@@ -236,9 +239,7 @@ let eleccion;
         }
     }
     */
-    console.log(cuotas_precio);
-    subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
-    div_precio.appendChild(subtotal);
+   
 
 //Input Nombre//
 let inputName = document.querySelector("#inputNombre")
