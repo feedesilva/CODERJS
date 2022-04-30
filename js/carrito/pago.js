@@ -165,6 +165,9 @@ let eleccion;
             }
             cuotas.addEventListener("change", ()=>{
                 console.log(cuotas.value);
+                if(cuotas.value === 3){
+                    cuotas_precio = 20;
+                }
             })
             /*
               //  cuotas.addEventListener("change", ()=>{
