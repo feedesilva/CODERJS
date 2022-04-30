@@ -140,8 +140,8 @@ let interes = 0;
                     cant_cuotas = i;
                     }
                 })
-                precio_Con_Cuota *= interes;
-                subtotal.innerHTML = "El precio final es: $" + precio_Con_Cuota;
+                precio_Con_Cuota = precio_Con_Cuota * interes;
+                subtotal.innerHTML = `El precio final es: $ ${precio_Con_Cuota}`;
                 div_precio.appendChild(subtotal);
                 cuotas.appendChild(option);
                 
