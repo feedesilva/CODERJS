@@ -99,15 +99,16 @@ inputNum.addEventListener("keypress", (e)=>{
 //Defino que imagen se muestra en la tarjeta//
 let interes = 0;
 let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
-console.log(cuotas_precio);
     if(inputNum.value[0] ==4){
         div_img.innerHTML = '';
         const card_img = document.createElement("img");
         console.log("visa");
         card_img.src = "../assets/visa.png";
         div_img.appendChild(card_img);
+
         let cuotas = document.querySelector("#inputCuotas");
         let cant_cuotas = 0;
+
         for(let i = 1; i<=6; i++){
             if(i===1 || i%3 === 0){
                 let option = document.createElement("option");
@@ -126,22 +127,21 @@ console.log(cuotas_precio);
         
                 cuotas.addEventListener("change", ()=>{
                     if(option.value === 1){
-                        interes = 1;
-                    console.log(interes);
+                        cuotas_precio = cuotas_precio * 1;
+                        console.log(interes);
                     cant_cuotas = i;
                     }
                     if(option.value === 3){
-                        interes = 1.1;
+                        cuotas_precio = cuotas_precio * 1.1;
                         console.log(interes);
                         cant_cuotas = i;
                     }
                     if(option.value === 6){
-                        interes = 1.2;
+                        cuotas_precio = cuotas_precio * 1.2;
                         console.log(interes);
                     cant_cuotas = i;
                     }
                 })
-                cuotas_precio = cuotas_precio * interes;
                 console.log(cuotas_precio);
                 subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
                 div_precio.appendChild(subtotal);
