@@ -137,6 +137,7 @@ let precio_Con_Cuota;
                     subtotal.innerHTML = `El precio final es: ${precio_Con_Cuota}` ;
                     div_precio.appendChild(subtotal);
                 } 
+                console.log(option.selected);
                 cuotas.appendChild(option);
                 
             }
