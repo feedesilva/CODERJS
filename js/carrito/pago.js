@@ -109,26 +109,29 @@ let subtotal;
         let cuotas = document.querySelector("#inputCuotas");
         let cant_cuotas = 0;
         for(let i = 1; i<=6; i++){
-            let option = document.createElement("option");
-            console.log(i);
-            if(i===1){
-                option.value = i;
-                option.innerText=i;
-                cant_cuotas = i;
+            if(i%1===0 && i%3 === 0){
+                let option = document.createElement("option");
                 console.log(i);
-            } 
-            if(i===3){
-                option.value = i;
-                option.innerText=i;
-                cant_cuotas = i;
-            } if(i===6){
-                option.value = i;
-                option.innerText=i;
-                cant_cuotas = i;
-            } 
-            cuotas.appendChild(option);
+                if(i===1){
+                    option.value = i;
+                    option.innerText=i;
+                    cant_cuotas = i;
+                    console.log(i);
+                } 
+                if(i===3){
+                    option.value = i;
+                    option.innerText=i;
+                    cant_cuotas = i;
+                } 
+                if(i===6){
+                    option.value = i;
+                    option.innerText=i;
+                    cant_cuotas = i;
+                } 
+                cuotas.appendChild(option);
             }
         }
+    }
     
     else{
     if(inputNum.value[0] == 3){
