@@ -124,7 +124,7 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
                     option.innerText=`${i} 20% interés`;
                 }
         
-               // cuotas.addEventListener("change", ()=>{
+               cuotas.addEventListener("change", ()=>{
                     if(option.value === 1){
                         cuotas_precio = cuotas_precio * 1;
                         console.log("Enrto en 1");
@@ -142,13 +142,12 @@ let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
                         console.log("Enrto en 6");
 
                     }
-                //})
-                console.log(cuotas_precio);
-                subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
-                cuotas.appendChild(option);
-                
+                })
             }
         }
+        console.log(cuotas_precio);
+        subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
+        cuotas.appendChild(option);
     }
   
 
