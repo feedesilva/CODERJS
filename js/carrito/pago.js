@@ -144,7 +144,6 @@ selectMonth.addEventListener("change", () =>{
 
 let cuotas_precio = JSON.parse(localStorage.getItem("Precio"));
 let cuotas = document.querySelector("#inputCuotas");
-let cant_cuotas = 0;
     if(banco === visa){
         for(let i = 1; i<=6; i++){
             if(i===1 || i%3 === 0){
@@ -152,41 +151,35 @@ let cant_cuotas = 0;
                 if(i===1){
                     option.value = i;
                     option.innerText=`${i} Sin interes`;
-                    cant_cuotas = 1;
                 }
                 if(i===3){
                     option.value = i;
                     option.innerText=`${i} 10% interés`;
-                    cant_cuotas = 3;
                 }
                 if(i===6){
                     option.value = i;
                     option.innerText=`${i} 20% interés`;
-                    cant_cuotas = 6;
                 }
                 cuotas.appendChild(option);
 
-               cuotas.addEventListener("change", ()=>{
-                    if(cant_cuotas === 1){
+                    if(option.value.selected === 1){
                         cuotas_precio = cuotas_precio * 1;
                         console.log("Enrto en 1");
 
                     }
-                    if(cant_cuotas === 3){
+                    if(option.value.selected === 3){
                         cuotas_precio = cuotas_precio * 1.1;
                         console.log("Enrto en 3");
 
                     }
-                    if(cant_cuotas === 6){
+                    if(option.value.selected === 6){
                         cuotas_precio = cuotas_precio * 1.2;
                         console.log("Enrto en 6");
 
                     }
-                })
+            
             }
         }
-        console.log(cuotas_precio);
-        subtotal.innerHTML = `El precio final es: $ ${cuotas_precio}`;
     }
     else{
         if(banco === master){
@@ -211,7 +204,7 @@ let cant_cuotas = 0;
                     }
                     cuotas.appendChild(option);
     
-                   cuotas.addEventListener("change", ()=>{
+                  
                         if(option.value === 1){
                             cuotas_precio = cuotas_precio * 1;
                             console.log("Enrto en 1");
@@ -235,7 +228,7 @@ let cant_cuotas = 0;
                             console.log("Enrto en 9");
     
                         }
-                    })
+                 
                 }
             }
             console.log(cuotas_precio);
